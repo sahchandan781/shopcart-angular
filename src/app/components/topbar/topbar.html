@@ -1,0 +1,40 @@
+<div class="topbar">
+  <p><i class="fa-solid fa-phone"></i> +917696805575</p>
+  <p class="discount">Get 50% Off on Selected Items | Shop Now</p>
+
+  <div class="right-section">
+    <!-- Language Dropdown -->
+    <div class="dropdown">
+      <button (click)="toggleDropdown('lang')">
+        {{ selectedLang }} <i class="fa-solid fa-angle-down"></i>
+      </button>
+
+      @if (showLangDropdown) {
+        <ul class="dropdown-menu">
+          @for (lang of languages; track $index) {
+            <li (click)="selectOption('lang', lang)">
+              {{ lang }}
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <!-- Location Dropdown -->
+    <div class="dropdown">
+      <button (click)="toggleDropdown('loc')">
+        {{ selectedLoc }} <i class="fa-solid fa-angle-down"></i>
+      </button>
+
+      @if (showLocDropdown) {
+        <ul class="dropdown-menu">
+          @for (loc of locations; track $index) {
+            <li (click)="selectOption('loc', loc)">
+              {{ loc }}
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</div>

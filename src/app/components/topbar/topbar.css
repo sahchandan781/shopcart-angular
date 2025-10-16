@@ -1,0 +1,95 @@
+/* Reset default browser margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+/* Apply styles only to the topbar */
+.topbar {
+  height: 36px;
+  width: 100%;
+  background-color: #003d29;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* vertically center text */
+  padding: 0 40px;
+  position: fixed; /* optional: fix it to top */
+  top: 0;
+  left: 0;
+  
+}
+
+
+.right-section {
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background-color: white;
+  color: black;
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  border-radius: 4px;
+  min-width: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+@media (max-width: 450px) {
+
+
+  .topbar{
+    height: 60px;
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: auto;
+    font-size: 12px;
+  }
+
+  .discount{
+    display: none;
+  }
+
+  .right-section{
+    display: flex;
+    gap: 2rem;
+  }
+}
