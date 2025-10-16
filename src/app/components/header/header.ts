@@ -8,5 +8,15 @@ import { RouterLink } from "@angular/router";
   styleUrl: './header.css'
 })
 export class Header {
+activateAccountBtn = false;
+loggedin = false
+notLoggedin = false
+
+handleAccount(){
+  this.activateAccountBtn = !this.activateAccountBtn;
+  this.loggedin = !this.loggedin;
+
+  
+}
 
 }

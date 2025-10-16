@@ -2,7 +2,7 @@
 <header class="header" >
   <div class="header-left">
     <div class="logo">
-      <a routerLink="/" ><img
+      <a routerLink="" ><img
         src="https://cdn.prod.website-files.com/63e857eaeaf853471d5335ff/63e86ab4c21faa7bc0bd90dd_Logo.svg"
         alt="Shopcart Logo"
       /></a>
@@ -23,10 +23,29 @@
   </div>
 
   <div class="header-right">
-    <a href="#" class="header-action">
+    <a (click)="handleAccount()" class="header-action">
       <i class="fa-regular fa-user"></i>
       <span>Account</span>
     </a>
+    @if(loggedin && activateAccountBtn){
+      <div class="account-dropdown" id="accountDropdown">
+    <ul id="loggedInMenu">
+      <li><a routerLink="login">Profile</a></li><hr class="text-white">
+      <li><a href="#">Orders</a></li><hr  class="text-white">
+      <li><a href="#">Sign Out</a></li>
+    </ul>
+  </div>
+    } @else if (activateAccountBtn && notLoggedin) {
+<div class="account-dropdown">
+    <ul id="loggedOutMenu" class="hidden">
+      <li><a routerLink="login">Login</a></li> <hr  class="text-white">
+      <li><a routerLink="signup">Sign Up</a></li>
+    </ul>
+  </div>
+    }
+
+  
+
     <a href="#" class="header-action">
       <i class="fa-solid fa-cart-shopping"></i>
       <span>Cart</span>
